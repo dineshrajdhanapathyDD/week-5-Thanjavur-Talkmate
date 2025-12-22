@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "env": {
+    "AI_PROVIDER": "@ai_provider",
+    "AI_API_KEY": "@ai_api_key", 
+    "AI_MODEL": "@ai_model",
+    "ENABLE_AI": "@enable_ai",
+    "GOOGLE_MAPS_API_KEY": "@google_maps_api_key"
+  }
+}
