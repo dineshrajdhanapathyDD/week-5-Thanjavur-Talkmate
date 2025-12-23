@@ -37,7 +37,8 @@ vercel
 
 ### 3. Environment Variables
 
-Set these in your Vercel project dashboard:
+**For Vercel Dashboard:**
+Set these environment variables directly in your Vercel project dashboard (not in vercel.json):
 
 ```env
 AI_PROVIDER=groq
@@ -46,6 +47,11 @@ AI_MODEL=llama-3.1-8b-instant
 ENABLE_AI=true
 GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 ```
+
+**For Local Development:**
+1. Copy `.env.local.example` to `.env.local`
+2. Fill in your actual API keys in `.env.local`
+3. The `.env.local` file is automatically ignored by git
 
 #### Getting API Keys:
 
@@ -71,12 +77,26 @@ Test the endpoints:
 3. Set publish directory: `public`
 4. Add environment variables in Netlify dashboard
 
-### Railway
+### Render
 
-1. Connect your GitHub repository to Railway
-2. Railway will auto-detect the Node.js app
-3. Add environment variables in Railway dashboard
-4. Deploy
+1. **Connect your GitHub repository** to Render
+2. **Create a new Web Service**
+3. **Configure build settings**:
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+   - Environment: `Node`
+4. **Add environment variables** in Render dashboard:
+   ```env
+   AI_PROVIDER=groq
+   AI_API_KEY=your_groq_api_key_here
+   AI_MODEL=llama-3.1-8b-instant
+   ENABLE_AI=true
+   GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+   PORT=10000
+   ```
+5. **Deploy** - Render will automatically build and deploy
+
+**Note**: The application includes a `render.yaml` file for easy configuration.
 
 ### Heroku
 
