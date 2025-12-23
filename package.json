@@ -11,8 +11,7 @@
     "test": "jest",
     "test:properties": "jest tests/properties",
     "type-check": "tsc --noEmit",
-    "validate-doc": "node dist/services/DocumentParser.js --validate",
-    "vercel-build": "tsc"
+    "validate-doc": "node dist/services/DocumentParser.js --validate"
   },
   "keywords": [
     "ai",
