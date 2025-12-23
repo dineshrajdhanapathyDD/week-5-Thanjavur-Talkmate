@@ -15,15 +15,5 @@
       "src": "/(.*)",
       "dest": "/public/$1"
     }
-  ],
-  "rewrite": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/public/$1"
-    }
   ]
 }
