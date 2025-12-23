@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "cp -r src/ui/* public/ 2>/dev/null || xcopy src\\ui\\* public\\ /E /I /Y 2>nul || echo 'Assets copied'",
+    "copy-assets": "cp -r src/ui/* public/ || xcopy src\\ui\\* public\\ /E /I /Y",
     "dev": "vercel dev",
     "start": "npm run build && node dist/index.js",
     "setup": "node setup-ai.js",
@@ -15,7 +15,7 @@
     "validate-doc": "node dist/services/DocumentParser.js --validate",
     "vercel-build": "npm run build",
     "postbuild": "echo 'Build completed successfully'",
-    "clean": "rm -rf dist || rmdir /s /q dist 2>nul || echo 'Cleaned'"
+    "clean": "rm -rf dist public || rmdir /s /q dist public"
   },
   "keywords": [
     "ai",
